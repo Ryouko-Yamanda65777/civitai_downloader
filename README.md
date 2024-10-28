@@ -31,7 +31,7 @@ from civitai_downloader import download_file, get_token, store_token
 
 url = 'https://civitai.com/api/download/models/46846'
 output_path = '/path/to/save'
-token = get_token() or 'your_api_token_here'
+token = 'your_api_token_here'
 
 download_file(url, output_path, token)
 ```
