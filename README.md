@@ -2,6 +2,12 @@
 
 A Python package for downloading models from CivitAI via a command-line tool or programmatically. This package supports token-based authentication and allows users to save downloaded models to a specified directory.
 
+
+
+[![Open In Spaces](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-md-dark.svg)](https://huggingface.co/spaces/Ryouko65777/civitai-downloader)
+
+
+
 ## Installation
 
 Install the package via pip:
