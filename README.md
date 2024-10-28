@@ -17,16 +17,10 @@ pip install civitai-downloader
 To download a model from CivitAI, use the `civitai-downloader` command with the following arguments:
 
 ```bash
-civitai-downloader <url> <output_path>
+civitai-downloader <url> <output_path> <token>
 ```
 
-**Example:**
 
-```bash
-civitai-downloader https://civitai.com/api/download/models/46846 /workspace/stable-diffusion-webui/models/Stable-diffusion
-```
-
-If this is your first time using the downloader, it will prompt you to enter your CivitAI API token, which will be stored for future use.
 
 ### Programmatic Usage
 
