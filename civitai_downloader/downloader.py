@@ -12,8 +12,8 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 def get_args():
     parser = argparse.ArgumentParser(description='CivitAI Downloader')
-    parser.add_argument('url', type=str, help='CivitAI Download URL, e.g., https://civitai.com/api/download/models/46846')
-    parser.add_argument('output_path', type=str, help='Output path, e.g., /workspace/stable-diffusion-webui/models/Stable-diffusion')
+    parser.add_argument('--url', type=str, help='CivitAI Download URL, e.g., https://civitai.com/api/download/models/46846')
+    parser.add_argument('--output_path', type=str, help='Output path, e.g., /workspace/stable-diffusion-webui/models/Stable-diffusion')
     parser.add_argument('--token', type=str, help='CivitAI token (optional). If not provided, it will attempt to load from config.')
     return parser.parse_args()
 
