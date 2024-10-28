@@ -14,15 +14,18 @@ def get_args():
     parser = argparse.ArgumentParser(description='CivitAI Downloader')
     parser.add_argument('url', type=str, help='CivitAI Download URL, e.g., https://civitai.com/api/download/models/46846')
     parser.add_argument('output_path', type=str, help='Output path, e.g., /workspace/stable-diffusion-webui/models/Stable-diffusion')
+    parser.add_argument('--token', type=str, help='CivitAI token (optional). If not provided, it will attempt to load from config.')
     return parser.parse_args()
 
-def get_token():
+def get_token(args_token: str):
+    if args_token:
+        store_token(args_token)
+        return args_token
     try:
         with open(TOKEN_FILE, 'r') as file:
-            token = file.read()
-            return token
+            return file.read().strip()
     except Exception:
-        return None
+        return prompt_for_civitai_token()
 
 def store_token(token: str):
     TOKEN_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -58,7 +61,7 @@ def download_file(url: str, output_path: str, token: str):
         if content_disposition:
             filename = unquote(content_disposition.split('filename=')[1].strip('"'))
         else:
-            raise Exception('Unable to determine filename')
+            filename = os.path.basename(parsed_url.path)
 
         response = urllib.request.urlopen(redirect_url)
     elif response.status == 404:
@@ -92,13 +95,16 @@ def download_file(url: str, output_path: str, token: str):
                 sys.stdout.write(f'\rDownloading: {filename} [{progress*100:.2f}%] - {speed:.2f} MB/s')
                 sys.stdout.flush()
 
-    print(f'\nDownload completed. File saved as: {filename}')
+    print(f'\nDownload completed. File saved as: {output_file}')
     print(f'Downloaded in {time.time() - start_time:.2f} seconds')
 
 def main():
     args = get_args()
-    token = get_token() or prompt_for_civitai_token()
+    token = get_token(args.token)
     try:
         download_file(args.url, args.output_path, token)
     except Exception as e:
         print(f'ERROR: {e}')
+
+if __name__ == "__main__":
+    main()
