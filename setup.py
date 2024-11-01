@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='civitai-downloader',
-    version='0.1.2',
+    version='1.1.2',
     packages=find_packages(),
     install_requires=[],
     entry_points={
