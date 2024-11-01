@@ -56,3 +56,8 @@ The first time you use `civitai_downloader`, you'll be prompted to enter your Ci
 
 This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
 
+## Credits
+
+gradio demo by - [Eddycrack864](https://github.com/Eddycrack864)
+
+
