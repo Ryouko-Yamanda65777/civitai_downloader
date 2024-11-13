@@ -5,6 +5,8 @@ import urllib.request
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs, unquote
 import gradio as gr
+from pyngrok import ngrok
+
 
 CHUNK_SIZE = 1638400
 TOKEN_FILE = Path.home() / '.civitai' / 'config'
@@ -114,7 +116,9 @@ def launch_ui():
 
         download_button.click(civitai_downloader, inputs=[url_input, output_path_input, token_input], outputs=[output, output_file])
 
-    demo.launch()
+    public_url = ngrok.connect(7860)
+    print(f"Public URL: {public_url}")
+    demo.launch(server_name="0.0.0.0", server_port=7860)
 
 if __name__ == "__main__":
     launch_ui()
