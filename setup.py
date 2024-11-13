@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'civitai-downloader=civitai_downloader.app:main',  # Adjust entry point to match your file structure
+            'civitai-downloader=civitai_downloader.app:launch_ui',  # Adjust entry point to match your file structure
         ],
     },
     author='Ryouko-Yamanda65777',
