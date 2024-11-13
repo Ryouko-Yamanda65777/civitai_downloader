@@ -116,9 +116,8 @@ def launch_ui():
 
         download_button.click(civitai_downloader, inputs=[url_input, output_path_input, token_input], outputs=[output, output_file])
 
-    public_url = ngrok.connect(7860)
-    print(f"Public URL: {public_url}")
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    
+    demo.launch(debug=True, share=True)
 
 if __name__ == "__main__":
     launch_ui()
