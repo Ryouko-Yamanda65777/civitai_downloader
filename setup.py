@@ -6,14 +6,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='civitai-downloader',
-    version='1.1.3',
+    version='1.1.4',
     packages=find_packages(),
     install_requires=[
         'gradio',  # Include other dependencies here if needed
     ],
     entry_points={
         'console_scripts': [
-            'civitai-downloader=civitai_downloader.app:main',
+            'civitai-downloader=civitai_downloader.app:main',  # Adjust entry point to match your file structure
         ],
     },
     author='Ryouko-Yamanda65777',
@@ -34,7 +34,7 @@ setup(
     python_requires='>=3.6',
     include_package_data=True,
     package_data={
-        '': ['*.md'],
+        '': ['*.md'],  # Include markdown files in the package
     },
     project_urls={  # Optional additional URLs
         'Bug Tracker': 'https://github.com/Ryouko-Yamanda65777/civitai-downloader/issues',
