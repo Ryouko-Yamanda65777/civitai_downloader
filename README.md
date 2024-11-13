@@ -4,7 +4,6 @@ A Python package for downloading models from CivitAI via a command-line tool or 
 
 
 
-[![Open In Spaces](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-md-dark.svg)](https://huggingface.co/spaces/Ryouko65777/civitai-downloader)
 
 
 
@@ -17,6 +16,15 @@ pip install civitai-downloader
 ```
 
 ## Usage
+
+
+## Gradio webui Usage
+
+to run with gradio webui yiu can just run by this command 
+```
+civitai-downloader
+```
+
 
 ### Command-Line Usage
 
