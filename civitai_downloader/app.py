@@ -39,4 +39,4 @@ with gr.Blocks(title = "CivitAI Downloader") as app:
 
   button.click(downloader, [link, out_path, token], [outputs])
 
-app.launch(share=True)
+app.launch(share=True, debug=True)
