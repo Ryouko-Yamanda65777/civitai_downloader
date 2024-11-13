@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='civitai-downloader',
-    version='1.1.4',
+    version='1.1.5',
     packages=find_packages(),
     install_requires=[
         'gradio',  # Include other dependencies here if needed
