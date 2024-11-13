@@ -20,7 +20,7 @@ pip install civitai-downloader
 
 ## Gradio webui Usage
 
-to run with gradio webui yiu can just run by this command 
+to run with gradio webui you can just run by this command 
 ```
 civitai-downloader
 ```
